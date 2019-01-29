@@ -1,0 +1,42 @@
+(1) Dynamic Array: get and set the value at given index in Array is the KILLER FEATURE. BigO(1)
+************************************************************************************************
+size= Number of the element contain in the array
+index = current element position in the array
+
+- Resize: compare with initial capacity,
+          create new array with double the initial capacity,
+          copy existing array to newly created array,
+          point old to new,
+          set new initial capacity
+- insertion, first check resize needed, move up the element (size count start 1 + index count start 0)
+    size = size-1, size --;
+    Note: start with end of array, move up last element to next location.
+    Increment size counter for addition.
+    It take - Linear time O(n)
+- Deletion move down the element (size count start 1 + index count start 0)
+    index = index+1, index<size-1; index++
+    Decrement the size counter for deletion.
+    Note: start with index of array, move down next element to over current index location.
+    It take - Linear time O(n)
+
+(2) Linked List: Ability to insert and delete in constant time at the beginning, is the KILLER Feature. BigO(1)
+***************************************************************************************************************
+- Size/Count can be retrieve using two way:
+    (1) Have internal tracking counter, which increment/decrements based on insert/delete operation
+        Time complexity O(1) constant time (same operation of reading size variable)
+        Space complexity O(1) for creating internal variable (need to check it can be 0 since it is not created part of counting)
+
+    (2) Iterate through list and count it:
+        Time complexity O(n) linear time (since need to iterate list till nexelement pointer have null value)
+        Space complexity O(1) for creating internal variable to store count value
+
+- Insertion, at the begging BigO(1) Constant: , otherwise O(n):
+            * (1) create new node,
+            * (2) Check if it is the first ever node then set as head
+            * (3) if 2 is not applicable, then point new node to head
+            * (4) set head as new node.
+
+- Deletion, at begging BigO(1), otherwise O(n):
+       * (1) head is null or size 0, just return
+       * (2) if head being removed then, head.nextElement become head
+       * (3) if 2 is not possible, then for middle element where we move nextElement.nextElement twice
