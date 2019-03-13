@@ -68,6 +68,7 @@ public class DynamicArray {
     private void resize(){
 
         Object[] newDataArray = new Object[initialCapacity * 2];
+
         //copy existing old array to newly created array (with more capacity)
         for(int i = 0; i < initialCapacity; i++){
             newDataArray[i] = dataArray[i];

@@ -40,3 +40,7 @@ index = current element position in the array
        * (1) head is null or size 0, just return
        * (2) if head being removed then, head.nextElement become head
        * (3) if 2 is not possible, then for middle element where we move nextElement.nextElement twice
+
+(3) Stacks and Queue: Ability to push & pop (Stacks) and add & remove (Queues), is the KILLER features. BigO(1)
+implementation with Linked List which is often used. It can be implemented using array.
+*****************************************************************************************************************
