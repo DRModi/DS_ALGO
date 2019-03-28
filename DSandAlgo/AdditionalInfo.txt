@@ -41,6 +41,70 @@ index = current element position in the array
        * (2) if head being removed then, head.nextElement become head
        * (3) if 2 is not possible, then for middle element where we move nextElement.nextElement twice
 
+
+
 (3) Stacks and Queue: Ability to push & pop (Stacks) and add & remove (Queues), is the KILLER features. BigO(1)
 implementation with Linked List which is often used. It can be implemented using array.
 *****************************************************************************************************************
+Created using linked list
+
+Stacks:
+ - Created using linked list - Using only head element
+ - Remember LIFO - Last in first out
+ - Function - push, pop, peek, isEmpty
+ - Killer Feature [insertion and deletion O(1), search and access is O(n)]
+
+Queue:
+ - Created using linked list - Using both head (to remove node) and tail (to add the node) element
+ - Remember LIFO - Last in first out
+ - Function - add, remove, peek, isEmpty
+ - Killer Feature [insertion and deletion O(1), search and access is O(n)]
+
+
+(4) HashTable:
+*****************************************************************************************************************
+
+
+(5) Binary tree:
+**********************
+(1) Insert in binary tree:
+    two way - First recursively and iteratively
+        - Find position/null node based on the key value, either root, left or right
+            Recursively - if(key<currentNode.key)
+                node.leftNode = recursiveFun (currentNode.leftNode, Key, Value)
+            Iteratively - if(key<currentNode.key)
+                if currentNode.leftNode = null ? currentNode = newNode : currentNode = currentNode.leftNode;
+
+        - Create new node and assign it to the null position which found in earlier step
+
+(2) Find in binary tree:
+    two way - First recursively and iteratively
+            - Find position/null node based on the key value, either root, left or right
+                Recursively - if(key<currentNode.key)
+                    return recursiveFun (currentNode.leftNode, Key, Value)
+                Iteratively - if(key<currentNode.key)
+                    if currentNode.leftNode = null ? null : currentNode = currentNode.leftNode;
+            - Create new node and assign it to the null position which found in earlier step
+
+
+  // Delete: Three cases
+    // 1. No child
+    // 2. One child
+    // 3. Two children
+
+    // First two are simple. Third is more complex.
+
+    // Case 1: No child - simply remove from tree by nulling it.
+    //
+    // Case 2: One child - copy the child to the node to be deleted and delete the child
+
+    // Case 3: Two children - re-gig the tree to turn into a Case 1 or a Case 2
+
+    // For third case we first need to
+    // 1. Find the right side min
+    // 2. Copy it to the node we want to delete (creating a duplicate)
+    // 3. Then delete the min value way down on the branch we just copied
+    //
+    // This works because you can represent a binary tree in more than one way.
+    // Here we are taking advantage of that fact to make our more complicated
+    // 3rd case delete more simple by transforming it into case 1.

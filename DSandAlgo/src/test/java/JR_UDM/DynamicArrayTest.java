@@ -11,7 +11,7 @@ public class DynamicArrayTest {
 
     @Before
     public void Setup() throws Exception{
-        array = new DynamicArray(2);
+        array = new DynamicArray(1);
     }
 
     @Test
@@ -25,6 +25,8 @@ public class DynamicArrayTest {
         array.add("a");
         array.add("b");
         array.add("c");
+
+        System.out.println("Getting Array Size: " + array.size());
 
         array.insert(1,"d");
 

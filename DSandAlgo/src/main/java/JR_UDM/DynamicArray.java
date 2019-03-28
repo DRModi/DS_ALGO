@@ -55,7 +55,7 @@ public class DynamicArray {
         * (2) Decrement the size
         * */
 
-        //(1) make sure size count is start with 1, index with 0
+        //(1) size count is start with 1, index with 0
         for(int i = index; i < size - 1 ; i++){
             dataArray[i] = dataArray[i+1];
         }

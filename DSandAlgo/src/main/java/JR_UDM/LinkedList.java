@@ -271,7 +271,7 @@ public class LinkedList {
                     newNode.nextElement = nextNode;
                     //System.out.println("After New Node Next Element Data: " + newNode.nextElement.data);
 
-                    nextNode.nextElement = nextToNextNode;
+                    //nextNode.nextElement = nextToNextNode;
                     //System.out.println("Final Next to Next Element Data: " + currentNode.nextElement.data);
 
 
