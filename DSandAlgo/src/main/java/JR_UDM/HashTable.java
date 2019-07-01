@@ -47,8 +47,8 @@ public class HashTable {
         else{
             HashEntry entryList = dataArray[index];
 
-            if(entryList.nextHashEntry!=null){
-                entryList.nextHashEntry = entryList;
+            while (entryList.nextHashEntry!=null){
+                entryList = entryList.nextHashEntry;
             }
             //Add new entry to end of the linked list object at retrieved index
             entryList.nextHashEntry = newEntry;

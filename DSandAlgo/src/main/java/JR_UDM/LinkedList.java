@@ -145,7 +145,7 @@ public class LinkedList {
             return 0;
         }
 
-        int count = 1;
+        int count = 1; // starting with 1 since we know there is head which is 1 element to start with.
         Node currentNode = head;
         while(currentNode.nextElement!=null){
             currentNode = currentNode.nextElement;
