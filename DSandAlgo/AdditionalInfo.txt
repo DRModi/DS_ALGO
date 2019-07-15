@@ -108,3 +108,63 @@ Queue:
     // This works because you can represent a binary tree in more than one way.
     // Here we are taking advantage of that fact to make our more complicated
     // 3rd case delete more simple by transforming it into case 1.
+
+(6) Binary Heap - Max Min int:
+**********************************
+Runtime:
+    extract max/min: O(1)
+    Move up and down: O(log n)
+
+    Heap sort: O(n log n)  - sorting tree n times.
+
+
+//(1) create the function for retrieving index's for parent (i-1/2), left child (2i + 1) and right child (2i + 2)
+//(2) create the function for checking the parent (i>=0), left child and right child is available by retrieving index
+      from step one for child's and make sure they are less than size  (get(i) < size).
+//(3) function to retrieve the actual value for parent, left and right child.
+
+For Max Heap Int
+----------------
+//(4) insert - Make sure array capacity, insert into last index and compare with parent and if parent is less than swap
+the child with parent. continue this process till it reaches the possible top. It is called MoveUp/HeapifyUp.
+//(5) Extract - store/return max value from 0, then assign the smallest number (last indexed int in array) to index 0,
+now from index 0, compare with both children and if it is smaller than any of the children then swap with that child and
+continue till greater child available. It is called MoveDown/HeapifyDown.
+
+For Min Heap Int
+-----------------
+//(4) insert - Make sure array capacity, insert into last index and compare with parent and if parent is greater than swap
+the child with parent. continue this process till it reaches the possible top. It is called MoveUp/HeapifyUp.
+//(5) Extract - store/return max value from 0, then assign the greater number (last indexed int in array) to index 0,
+now from index 0, compare with both children and if it is greater than any of the children then swap with that child and
+continue till greater child available. It is called MoveDown/HeapifyDown.
+
+
+
+(8) Fibonacci Series:
+*************************
+ F(n) = F(n-1) + F(n-2);
+
+ - Recursive function - time complexity O(2^n) very slow.
+
+ Resolution -
+ -------------
+    - Memorization + Recursion - create array of N and store value for each iteration for future use.
+       (A) calculate only those number which are not available in created array
+
+        Time Complexity O(n), Space Complexity O(n) due to array
+
+    - Memorization + Iterative way - create array of N. store each iteration
+        and use sum of last two stored array values. Star from iteration with 2.
+
+        Time Complexity O(n), Space Complexity O(n) due to array
+
+    - Iterative without array
+        (1) create two variable and store value 1 ex. fib=1 , previousFib = 1
+        (2) Run for loop for given number and start count with i= 2 and run till i<n
+        (3) create temp variable store
+                temp = fib
+                fib+=previousFib
+                previousFib = temp
+
+        Time Complexity O(n), Space Complexity O(1) - Need only 1 temp variable.
